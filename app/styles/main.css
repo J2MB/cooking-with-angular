@@ -20,3 +20,15 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+.recipeCard{
+    list-style: none;
+    border:1px solid red;
+}
+
+.recipeCard.recipeImage{
+    width:100%;
+}
+
+.rating{
+}
