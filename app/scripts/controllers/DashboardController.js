@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('DashboardController', function ($scope) {
+  .controller('DashboardController', function ($scope, $location) {
     $scope.dashboardRecipes = [
         {
             name: "Mac and cheese",
@@ -10,4 +10,8 @@ angular.module('cookingWithAngularApp')
             rating: "3"
         }
     ];
+      
+     $scope.go = function(path){
+        $location.path(path);
+    };
   });

@@ -12,6 +12,10 @@ angular.module('cookingWithAngularApp', [
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardController'
       })
+      .when('/add', {
+        templateUrl: 'views/addRecipe.html',
+        controller: 'AddRecipeController'
+      })
       .otherwise({
         redirectTo: '/'
       });
