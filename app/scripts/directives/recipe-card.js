@@ -5,6 +5,6 @@ angular.module('cookingWithAngularApp')
     return {
       templateUrl: '/app/views/directives/recipeCard.html',
       restrict: 'E',
-      scope: {item: "=recipe"}
+      scope: {recipe: "=recipe"}
     };
   });
