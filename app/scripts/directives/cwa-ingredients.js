@@ -6,12 +6,14 @@ angular.module('cookingWithAngularApp')
       templateUrl: '/app/views/directives/cwaIngredients.html',
       restrict: 'E',
       scope: {
-        ingredients : "="  
+        ingredients : "="
         },
     
         controller: function($scope){
-            $scope.add = function(){
-                
+            $scope.newIngredient = {};
+            
+            $scope.addIngredient = function(){
+                $scope.ingredients.push($scope.newIngredient);
             }
         }
     }
