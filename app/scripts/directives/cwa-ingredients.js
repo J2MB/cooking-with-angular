@@ -14,6 +14,7 @@ angular.module('cookingWithAngularApp')
             
             $scope.addIngredient = function(){
                 $scope.ingredients.push($scope.newIngredient);
+                $scope.newIngredient = {};
             }
         }
     }
