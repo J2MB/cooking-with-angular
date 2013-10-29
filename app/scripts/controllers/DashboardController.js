@@ -7,7 +7,8 @@ angular.module('cookingWithAngularApp')
             name: "Mac and cheese",
             imageUrl: "http://du.cx/BrC",
             servings: "3 men",
-            rating: "3"
+            rating: "3",
+            ingredients: []
         }
     ];
       
