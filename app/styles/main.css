@@ -39,10 +39,7 @@ body {
     height: 250px;
     max-height: 250px;
     background: #000;
-}
-
-.imageHeader > * {
-    height: 250px;
+    overflow-y: hidden; 
 }
 
 .imageHeader > img {
@@ -82,4 +79,11 @@ li:hover .icon-remove {
 
 div.imageHeader button {
     float: right;
+}
+
+.add-item-button{
+    position: relative;
+    float: right;
+    margin: 20px;
+    top: -250px;
 }
