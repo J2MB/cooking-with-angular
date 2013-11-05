@@ -4,7 +4,7 @@ angular.module('cookingWithAngularApp')
   .controller('AddRecipeController', function ($scope, $location, RecipeListService) {
       $scope.recipe = 
         {
-            name: "",
+            name: "Fried Bacon",
             imageUrl: "http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg",
             servings: "",
             rating: "",
