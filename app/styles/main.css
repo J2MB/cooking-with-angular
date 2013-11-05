@@ -64,11 +64,11 @@ form[name=newIngredientForm] input {
     margin-right: auto;
 }
 
-li .icon-remove {
+li [class^="icon"] {
     display: none;
 }
 
-li:hover .icon-remove {
+li:hover [class^="icon"] {
     display: inline-block;
     border: none;
 }
