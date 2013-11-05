@@ -95,3 +95,15 @@ div.imageHeader button {
 .clear{
     clear: both;
 }
+
+.trans-bar{
+    height: 75px;
+    position: relative;
+    top: -75px;
+    background:rgba(255, 255, 255, .6);
+}
+
+.trans-bar > h1{
+    line-height:75px;
+    margin-left: 15px;
+}
