@@ -8,11 +8,7 @@ angular.module('cookingWithAngularApp')
             imageUrl: "http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg",
             servings: "",
             rating: "",
-            ingredients: [{
-                quantity: 1,
-                description: 'bacon',
-                unit: 'bacon'
-            }],
+            ingredients: [],
             steps: [],
             notes: []
         };
