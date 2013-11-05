@@ -59,4 +59,9 @@ li .icon-remove {
 
 li:hover .icon-remove {
     display: inline-block;
+    border: none;
+}
+
+.naked-list-item{
+    list-style: none;
 }

@@ -1,7 +1,7 @@
 <div>
     <h3 class="center">Ingredients</h3>
     <ul>
-        <li ng-repeat="ingredient in ingredients">
+        <li ng-repeat="ingredient in ingredients" class="naked-list-item">
             <span ng-bind="ingredient.quantity" />
             <span ng-show="ingredient.unit">{{ingredient.unit}} of </span>
             <span ng-bind="ingredient.description" /><!-- This is bullshit
