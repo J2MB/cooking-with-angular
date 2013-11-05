@@ -21,8 +21,21 @@ angular.module('cookingWithAngularApp')
                 $scope.toFocus.focus();
             }
             
+            // TODO make these 3 buttons+methods directives
             $scope.remove = function(index){
-                $scope.ingredients.splice(index, 1);   
+                $scope.ingredients.splice(index, 1);  
+            }
+            
+            $scope.moveUp = function(index){
+                var temp = $scope.ingredients[index];
+                $scope.remove(index);
+                $scope.ingredients.splice(index-1, 0, temp);
+            }
+            
+            $scope.moveDown = function(index){
+                var temp = $scope.ingredients[index];
+                $scope.remove(index);
+                $scope.ingredients.splice(index+1, 0, temp);
             }
         }
     }
