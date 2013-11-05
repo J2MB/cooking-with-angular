@@ -52,3 +52,11 @@ body {
 form[name=newIngredientForm] input {
     width: 4em;
 }
+
+li .icon-remove {
+    display: none;
+}
+
+li:hover .icon-remove {
+    display: inline-block;
+}
