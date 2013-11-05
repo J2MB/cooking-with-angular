@@ -91,3 +91,7 @@ div.imageHeader button {
     margin: 20px;
     top: -250px;
 }
+
+.clear{
+    clear: both;
+}
