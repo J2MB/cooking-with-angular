@@ -15,6 +15,10 @@ body {
     padding: 60px;
 }
 
+.page-header{
+    margin-bottom: 0px;
+}
+
 .hero-unit h1 {
     font-size: 60px;
     line-height: 1;
@@ -51,6 +55,20 @@ body {
 
 form[name=newIngredientForm] input {
     width: 4em;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.row{
+    margin: 0px;
+}
+
+.center{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 li .icon-remove {
