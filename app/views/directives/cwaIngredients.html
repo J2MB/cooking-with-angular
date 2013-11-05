@@ -8,9 +8,9 @@
          --><span ng-show="ingredient.qualifier">, {{ingredient.qualifier}}</span>
         </li>
     </ul>
-    <input type="text" ng-model="newIngredient.quantity" />
-    <input type="text" ng-model="newIngredient.unit" />
-    <input type="text" ng-model="newIngredient.description" />
-    <input type="text" ng-model="newIngredient.qualifier" />
+    <input type="text" ng-model="newIngredient.quantity" placeholder="1"/>
+    <input type="text" ng-model="newIngredient.unit" placeholder="stick"/>
+    <input type="text" ng-model="newIngredient.description" placeholder="butter"/>of
+    <input type="text" ng-model="newIngredient.qualifier" placeholder="soft"/>
     <button class="btn btn-primary" ng-click="addIngredient()">(+) add ingredient</button>
 </div>
