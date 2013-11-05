@@ -1,15 +1,14 @@
 <div>
-    <img>
-    <div class="row-fluid imageHeader"><img src="{{recipe.imageUrl}}"></img></div>
+    <div class="row imageHeader"><img src="{{recipe.imageUrl}}"></img></div>
 
-    <div class="row-fluid">
-        <div class="span2">
+    <div class="row">
+        <div class="span3">
             <cwa-ingredients ingredients="recipe.ingredients"></cwa-ingredients>
         </div>
         <div class="span4">
             <cwa-steps steps="recipe.steps" />
         </div>
-        <div class="span6">
+        <div class="span5">
             <cwa-notes notes="recipe.notes" />
         </div>
     </div>
