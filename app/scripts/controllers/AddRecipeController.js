@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('AddRecipeController', function ($scope, RecipeListService) {
+  .controller('AddRecipeController', function ($scope, $location, RecipeListService) {
       $scope.recipe = 
         {
             name: "",
@@ -15,5 +15,10 @@ angular.module('cookingWithAngularApp')
 
       $scope.add = function() {
           RecipeListService.add($scope.recipe);
+          $location.path("/");
       };
+      
+      $scope.disabled = function() {
+          return $scope.recipe.ingredients.length < 2 || $scope.recipe.steps.length == 0;
+      }
   });
