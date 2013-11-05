@@ -10,7 +10,7 @@
     </ul>
     <form name="newIngredientForm">
         <input type="text" ng-model="newIngredient.quantity" placeholder="1" required />
-        <input type="text" ng-model="newIngredient.unit" placeholder="stick" required />of
+        <input type="text" ng-model="newIngredient.unit" placeholder="stick" required /> of
         <input type="text" ng-model="newIngredient.description" placeholder="butter" required />,
         <input type="text" ng-model="newIngredient.qualifier" placeholder="soft" />
         <button class="btn btn-primary" ng-click="addIngredient()" ng-disabled="newIngredientForm.$invalid">(+) add ingredient</button>
