@@ -48,3 +48,7 @@ body {
 .imageHeader > img {
     width: 100%;
 }
+
+form[name=newIngredientForm] input {
+    width: 4em;
+}
