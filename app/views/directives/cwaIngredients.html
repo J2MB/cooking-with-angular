@@ -2,11 +2,11 @@
     <h3 class="center">Ingredients</h3>
     <ul>
         <li ng-repeat="ingredient in ingredients">
-            <button class="icon icon-remove" ng-click="remove($index)" ></button>
             <span ng-bind="ingredient.quantity" />
             <span ng-show="ingredient.unit">{{ingredient.unit}} of </span>
             <span ng-bind="ingredient.description" /><!-- This is bullshit
          --><span ng-show="ingredient.qualifier">, {{ingredient.qualifier}}</span>
+            <button class="icon icon-remove" ng-click="remove($index)" ></button>
         </li>
     </ul>
     <form name="newIngredientForm">

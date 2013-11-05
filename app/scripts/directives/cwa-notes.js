@@ -16,6 +16,10 @@ angular.module('cookingWithAngularApp')
                 $scope.notes.push($scope.newNote);
                 $scope.newNote = {};
             }
+            
+            $scope.remove = function(index){
+                $scope.notes.splice(index,1);
+            }
         }
     }
   });
