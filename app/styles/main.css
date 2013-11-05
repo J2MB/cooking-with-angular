@@ -61,11 +61,11 @@ form[name=newIngredientForm] input {
     padding: 0px;
 }
 
-.row{
+.row {
     margin: 0px;
 }
 
-.center{
+.center {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -77,4 +77,8 @@ li .icon-remove {
 
 li:hover .icon-remove {
     display: inline-block;
+}
+
+div.imageHeader button {
+    float: right;
 }
