@@ -12,9 +12,6 @@ angular.module('cookingWithAngularApp')
       ];
       
       this.add = function(recipe) {
-        dashboardRecipes.push(recipe);
+        this.dashboardRecipes.push(recipe);
       }
-      
-      // TODO: Delete n stuff
-          
   });
