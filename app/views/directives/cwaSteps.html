@@ -5,6 +5,8 @@
             <span ng-bind="step.description" />
         </li>
     </ol>
-    <input type="text" ng-model="newStep.description" />
-    <button class="btn btn-primary" ng-click="addStep()">(+) add step</button>
+    <form name="newStepForm">
+    <input type="text" ng-model="newStep.description" required />
+    <button class="btn btn-primary" ng-click="addStep()" ng-disabled="newStepForm.$invalid">(+) add step</button>
+    </form>
 </div>
