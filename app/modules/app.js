@@ -9,11 +9,11 @@ angular.module('cookingWithAngularApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/dashboard.html',
+        templateUrl: 'dashboard/dashboard.html',
         controller: 'DashboardController'
       })
       .when('/add', {
-        templateUrl: 'views/addRecipe.html',
+        templateUrl: 'addRecipe/addRecipe.html',
         controller: 'AddRecipeController'
       })
       .otherwise({
