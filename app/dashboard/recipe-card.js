@@ -3,7 +3,7 @@
 angular.module('cookingWithAngularApp')
   .directive('recipeCard', function () {
     return {
-      templateUrl: '/app/views/directives/recipeCard.html',
+      templateUrl: '/app/dashboard/recipeCard.html',
       restrict: 'E',
       scope: {recipe: "="}
     };

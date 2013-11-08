@@ -3,7 +3,7 @@
 angular.module('cookingWithAngularApp')
   .directive('cwaIngredients', function () {
     return {
-      templateUrl: '/app/views/directives/cwaIngredients.html',
+      templateUrl: '/app/addRecipe/ingredients/cwaIngredients.html',
       restrict: 'E',
       scope: {
         ingredients : "="

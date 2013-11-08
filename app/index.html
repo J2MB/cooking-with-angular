@@ -69,17 +69,15 @@
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/directives/recipe-card.js"></script>
-        <script src="scripts/controllers/DashboardController.js"></script>
-        <script src="scripts/controllers/AddRecipeController.js"></script>
-        <script src="scripts/services/RecipeListService.js"></script>
-        <script src="scripts/directives/cwa-ingredients.js"></script>
-        <script src="scripts/directives/cwa-steps.js"></script>
+        <!-- build:js({.tmp,app}) fakeDir/doesNotMatter.js -->
+        <script src="modules/app.js"></script>
+        <script src="modules/services/RecipeListService.js"></script>
+        <script src="dashboard/recipe-card.js"></script>
+        <script src="dashboard/DashboardController.js"></script>
+        <script src="addRecipe/AddRecipeController.js"></script>
+        <script src="addRecipe/ingredients/cwa-ingredients.js"></script>
+        <script src="addRecipe/steps/cwa-steps.js"></script>
+        <script src="addRecipe/notes/cwa-notes.js"></script>
         <!-- endbuild -->
-      
-        <script src="scripts/directives/cwa-notes.js"></script>
 </body>
 </html>
