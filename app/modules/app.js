@@ -12,9 +12,17 @@ angular.module('cookingWithAngularApp', [
         templateUrl: 'dashboard/dashboard.html',
         controller: 'DashboardController'
       })
-      .when('/add', {
-        templateUrl: 'addRecipe/addRecipe.html',
-        controller: 'AddRecipeController'
+      .when('/recipe', {
+        templateUrl: 'recipe/recipe.html',
+        controller: 'RecipeController'
+      })
+      .when('/recipe/:id', {
+        templateUrl: 'recipe/recipe.html',
+        controller: 'RecipeController'
+      })
+      .when('/recipe/:id/edit', {
+        templateUrl: 'recipe/recipe.html',
+        controller: 'RecipeController'
       })
       .otherwise({
         redirectTo: '/'
