@@ -1,14 +1,12 @@
 <div>
     <h3 class="center">Ingredients</h3>
     <ul>
-        <li ng-repeat="ingredient in ingredients" class="naked-list-item">
+        <li class="naked-list-item" ng-repeat="ingredient in ingredients" >
             <span ng-bind="ingredient.quantity" />
             <span ng-show="ingredient.unit">{{ingredient.unit}} of </span>
             <span ng-bind="ingredient.description" /><!-- This is bullshit
          --><span ng-show="ingredient.qualifier">, {{ingredient.qualifier}}</span>
-            <button class="icon icon-remove" ng-click="remove($index)" ></button>
-            <button class="icon icon-arrow-up" ng-click="moveUp($index)" ></button>
-            <button class="icon icon-arrow-down" ng-click="moveDown($index)" ></button>
+            <deleteable index="$index" list="ingredients" />
         </li>
     </ul>
     <form name="newIngredientForm">

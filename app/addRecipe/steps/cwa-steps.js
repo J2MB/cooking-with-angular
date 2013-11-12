@@ -16,10 +16,6 @@ angular.module('cookingWithAngularApp')
                 $scope.steps.push($scope.newStep);
                 $scope.newStep = {};
             }
-            
-            $scope.remove = function(index){
-                $scope.steps.splice(index,1);
-            }
         }
     }
   });
