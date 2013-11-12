@@ -3,7 +3,7 @@
     <ol>
         <li ng-repeat="step in steps">
             <span ng-bind="step.description" />
-            <button class="icon icon-remove" ng-click="remove($index)" ></button>
+            <deleteable index="$index" list="steps" />
         </li>
     </ol>
     <form name="newStepForm">
