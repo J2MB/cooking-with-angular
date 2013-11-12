@@ -1,15 +1,17 @@
 <div class="row-fluid">
-     <div class="span3" id="showme"><button class="btn btn-primary" ng-click="go('/add')">(+) add recipe</button></div>
+     <div class="span3" id="showme">
+         <button class="btn btn-primary" ng-click="go('/recipe')">(+) add recipe</button>
+     </div>
      <div class="span9" id="showme">
         <!-- Add your site or application content here -->
         <div class="hero-unit" ng-controller="DashboardController">
             <ul>
                 <li class="recipeCard" ng-repeat="recipe in dashboardRecipes">
-                    <recipe-card recipe="recipe"></recipe-card>
+                    <a href="#/recipe/{{$index}}">
+                        <recipe-card recipe="recipe"></recipe-card>
+                    </a>
                 </li>
             </ul>
         </div>
      </div>
 </div>
-
-
