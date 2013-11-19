@@ -2,7 +2,7 @@
     '{{repeat(5,7)}}',
     {
         name: '{{lorem(3,words)}}',
-        imageUrl: 'http://lorempixel.com/400/200/food/',
+        imageUrl: 'http://lorempixel.com/400/200/food/{{numeric(1,999)}}',
         servings: '{{numeric(1,5)}}',
         rating: '{{numeric(1,5)}}',
         ingredients: [
