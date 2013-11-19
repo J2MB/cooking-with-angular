@@ -2,7 +2,7 @@
     '{{repeat(5,7)}}',
     {
         name: '{{lorem(3,words)}}',
-        imageUrl: 'http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg',
+        imageUrl: 'http://lorempixel.com/400/200/food/',
         servings: '{{numeric(1,5)}}',
         rating: '{{numeric(1,5)}}',
         ingredients: [
@@ -10,7 +10,7 @@
                 'quantity':'{{numeric(1,8)}}',
                 'unit':'{{lorem(1,words)}}',
                 'description':'{{lorem(1,words)}}',
-                'qualifier':'{{lorem(1,words}}'
+                'qualifier':'{{lorem(1,words)}}'
             }
         ],
         steps: [
