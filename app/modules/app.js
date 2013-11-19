@@ -3,6 +3,7 @@
 angular.module('cookingWithAngularApp', [
   'ngCookies',
   'ngResource',
+  'ngRoute',
   'ngSanitize',
   'ui.bootstrap'
 ])

@@ -7,7 +7,7 @@ angular.module('cookingWithAngularApp')
       
       var initRecipe = function() {
           if (!$scope.newMode) {
-              return RecipeListService.dashboardRecipes[$routeParams.id];
+              return RecipeListService.getDashboardRecipe($routeParams.id);
           }
           
           return {
@@ -29,8 +29,8 @@ angular.module('cookingWithAngularApp')
       };
       
       $scope.disabled = function() {
-          return $scope.recipe.ingredients.length < 2 || $scope.recipe.steps.length == 0;
+          return $scope.recipe.$resolved 
+                    && ($scope.recipe.ingredients.length < 2 
+                        || $scope.recipe.steps.length == 0);
       }
-      
-      
   });
