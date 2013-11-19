@@ -1,0 +1,25 @@
+[
+    '{{repeat(5,7)}}',
+    {
+        name: '{{lorem(3,words)}}',
+        imageUrl: 'http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg',
+        servings: '{{numeric(1,5)}}',
+        rating: '{{numeric(1,5)}}',
+        ingredients: [
+            '{{repeat(1,6)}}', {
+                'quantity':'{{numeric(1,8)}}',
+                'unit':'{{lorem(1,words)}}',
+                'description':'{{lorem(1,words)}}',
+                'qualifier':'{{lorem(1,words}}'
+            }
+        ],
+        steps: [
+            '{{repeat(1,4)}}',
+            '{{lorem(1,sentences)}}'
+        ],
+        notes: [
+            '{{repeat(1,6)}}',
+            '{{lorem(1,sentences)}}'
+        ]
+    }
+]
