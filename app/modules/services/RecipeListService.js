@@ -2,7 +2,7 @@
 
 angular.module('cookingWithAngularApp')
   .service('RecipeListService', function RecipeListService($resource, $q) {
-      var Recipes = $resource('/test/rest/recipes/all.json');
+      var Recipes = $resource('/app/rest/recipes/all.json');
       
       this.dashboardRecipes = Recipes.query();
       
