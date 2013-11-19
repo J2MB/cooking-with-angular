@@ -13,17 +13,17 @@
     <div class="trans-bar"><h1>{{recipe.name}}</h1></div>
     <div class="clear remove-gutter"></div>
     <div class="container">
-        <div class="row-fluid">
+        <div class="row-fluid card-container">
             <div class="span5 card">
                 <cwa-ingredients ingredients="recipe.ingredients"></cwa-ingredients>
             </div>
-            <div class="span7 card">
-                <cwa-steps steps="recipe.steps" />
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span12 card">
-                <cwa-notes notes="recipe.notes" />
+            <div class="span7">
+                <div class="row-fluid card">
+                    <cwa-steps steps="recipe.steps" />
+                </div>
+                <div class="row-fluid card">
+                    <cwa-notes notes="recipe.notes" />
+                </div>
             </div>
         </div>
     </div>
