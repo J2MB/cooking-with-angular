@@ -19,7 +19,10 @@ angular.module('cookingWithAngularApp')
           return recipes;
       };
 
-      this.getDashboardRecipe = function(id) {
-          return recipes[id];
+      this.getDashboardRecipe = function(id, callback) {
+         this.promise.then(function(data){
+            var recipe = recipes[id];
+            callback(recipe);
+         });
       };
   });

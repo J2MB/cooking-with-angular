@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams, $route, recipe) {
+  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams, recipe) {
       $scope.newMode = $routeParams.id === undefined;
       $scope.editMode = $routeParams.id && $location.path().indexOf('/edit') != -1;
       

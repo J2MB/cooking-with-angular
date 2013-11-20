@@ -21,10 +21,21 @@ angular.module('cookingWithAngularApp', [
         templateUrl: 'modules/recipe/recipe.html',
         controller: 'RecipeController',
         resolve: {
-        	recipe: function(RecipeListService, $route){
-        		RecipeListService.promise.then(function(){
-        			return RecipeListService.getDashboardRecipe($route.current.params.id);
-        		});
+            recipe: function(RecipeListService, $route, $q){
+                var id = $route.current.params.id;
+                var deferred = $q.defer();
+                
+                var callback = function(recipe){
+                    if (recipe === undefined) {//more checking needed
+                        deferred.reject("No recipe for this id: " + id);
+                    } else {
+                        deferred.resolve(recipe);   
+                    }
+                };
+                
+    		    RecipeListService.getDashboardRecipe(id, callback);
+
+        		return deferred.promise;
         	}
         }
       })
