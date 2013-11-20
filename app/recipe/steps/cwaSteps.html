@@ -2,8 +2,8 @@
     <h3 class="center">Steps</h3>
     <ol>
         <li ng-repeat="step in steps">
-            <span ng-bind="step.description" />
-            <deleteable index="$index" list="steps" />
+            <span ng-show="step.description">{{step.description}}</span>
+            <deleteable index="$index" list="steps"></deleteable>
         </li>
     </ol>
     <form name="newStepForm">

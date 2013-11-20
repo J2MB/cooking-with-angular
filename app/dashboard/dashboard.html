@@ -6,7 +6,7 @@
         <!-- Add your site or application content here -->
         <div class="hero-unit" ng-controller="DashboardController">
             <ul>
-                <li class="recipeCard" ng-repeat="recipe in dashboardRecipes">
+                <li class="recipeCard" ng-repeat="recipe in dashboardRecipes track by $index">
                     <a href="#/recipe/{{$index}}">
                         <recipe-card recipe="recipe"></recipe-card>
                     </a>

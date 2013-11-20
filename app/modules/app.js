@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('cookingWithAngularApp', [
   'ngCookies',
   'ngResource',
@@ -8,11 +10,9 @@ angular.module('cookingWithAngularApp', [
 .config(function ($routeProvider) {
   
 $routeProvider.when('/', {
-    template: 'dashboard/dashboard.html',
+    templateUrl: 'dashboard/dashboard.html',
     controller: 'DashboardController'
   })
-  
-  /*
   .when('/recipe', {
     templateUrl: 'recipe/recipe.html',
     controller: 'RecipeController'
@@ -24,7 +24,7 @@ $routeProvider.when('/', {
   .when('/recipe/:id/edit', {
     templateUrl: 'recipe/recipe.html',
     controller: 'RecipeController'
-  })*/
+  })
   .otherwise({
     redirectTo: '/'
   });

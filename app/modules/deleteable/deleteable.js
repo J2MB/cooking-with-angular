@@ -5,7 +5,7 @@ angular.module('cookingWithAngularApp')
      return {
          restrict: 'E',
          replace: true,
-         templateUrl: '/app/modules/deleteable/deleteable.html',
+         templateUrl: 'modules/deleteable/deleteable.html',
          scope: {
             index: '=',
             list: '='   
