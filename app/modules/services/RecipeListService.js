@@ -4,21 +4,22 @@ angular.module('cookingWithAngularApp')
   .service('RecipeListService', function RecipeListService($resource, $q) {
       var Recipes = $resource('/app/rest/recipes/all.json');
       
-      this.dashboardRecipes = Recipes.query();
+      var request = Recipes.query(),
+          recipes;
+      this.promise = request.$promise;
+      this.promise.then(function(data){
+          recipes = data;
+      });
       
       this.add = function(recipe) {
-        this.dashboardRecipes.push(recipe);
-      }
+        recipes.push(recipe);
+      };
+      
+      this.getRecipes = function(){
+          return recipes;
+      };
 
       this.getDashboardRecipe = function(id) {
-          /*var promise = $q.defer();
-          this.dashboardRecipes.$promise.then(function(recipes) {
-              promise.resolve(recipes[id]);
-          });
-          return promise;*/
-          
-          return this.dashboardRecipes.$promise.then(function(recipes) {
-              return recipes[id];
-          });
-      }
+          return recipes[id];
+      };
   });

@@ -19,7 +19,14 @@ angular.module('cookingWithAngularApp', [
       })
       .when('/recipe/:id', {
         templateUrl: 'modules/recipe/recipe.html',
-        controller: 'RecipeController'
+        controller: 'RecipeController',
+        resolve: {
+        	recipe: function(RecipeListService, $route){
+        		RecipeListService.promise.then(function(){
+        			return RecipeListService.getDashboardRecipe($route.current.params.id);
+        		});
+        	}
+        }
       })
       .when('/recipe/:id/edit', {
         templateUrl: 'modules/recipe/recipe.html',

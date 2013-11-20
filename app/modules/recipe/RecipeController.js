@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams) {
+  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams, $route, recipe) {
       $scope.newMode = $routeParams.id === undefined;
       $scope.editMode = $routeParams.id && $location.path().indexOf('/edit') != -1;
       
       var initRecipe = function() {
           if (!$scope.newMode) {
-              return RecipeListService.getDashboardRecipe($routeParams.id);
+              return recipe;
           }
           
           return {
@@ -19,9 +19,10 @@ angular.module('cookingWithAngularApp')
                 steps: [],
                 notes: []
             };
-      }
+      };
       
       $scope.recipe = initRecipe();
+     
       
       $scope.add = function() {
           RecipeListService.add($scope.recipe);
@@ -32,5 +33,5 @@ angular.module('cookingWithAngularApp')
           return $scope.recipe.$resolved 
                     && ($scope.recipe.ingredients.length < 2 
                         || $scope.recipe.steps.length == 0);
-      }
+      };
   });

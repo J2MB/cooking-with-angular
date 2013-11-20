@@ -2,8 +2,11 @@
 
 angular.module('cookingWithAngularApp')
   .controller('DashboardController', function ($scope, $location, RecipeListService) {
-    $scope.dashboardRecipes = RecipeListService.dashboardRecipes;
       
+    RecipeListService.promise.then(function(){
+        $scope.dashboardRecipes = RecipeListService.getRecipes();
+    });
+     
      $scope.go = function(path){
         $location.path(path);
     };
