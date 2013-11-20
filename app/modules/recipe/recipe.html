@@ -7,7 +7,7 @@
             ng-show="newMode" 
             ng-disabled="disabled()">Add Recipe</button>
     <button class="btn btn-primary add-item-button" 
-            ng-click="save()" 
+            ng-click="saveRecipe(recipe)" 
             ng-show="editMode" 
             ng-disabled="disabled()">Save Recipe</button>
     <div class="trans-bar"><h1>{{recipe.name}}</h1></div>

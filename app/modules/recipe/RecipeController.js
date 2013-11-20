@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams, recipe) {
-      $scope.newMode = $routeParams.id === undefined;
-      $scope.editMode = $routeParams.id && $location.path().indexOf('/edit') != -1;
+  .controller('RecipeController', function ($scope, $location, RecipeListService, recipe, newMode, editMode) {
+      $scope.newMode = newMode;
+      $scope.editMode = editMode;
       $scope.recipe = recipe;
       
       $scope.addRecipe = function(recipe) {
@@ -11,7 +11,11 @@ angular.module('cookingWithAngularApp')
           $location.path("/");
       };
       
+      $scope.saveRecipe = function(recipe){
+          $location.path("/");
+      };
+      
       $scope.disabled = function() {
-          return $scope.recipe.ingredients.length < 2 || $scope.recipe.steps.length == 0;
+          return recipe.ingredients.length < 2 || recipe.steps.length == 0;
       };
   });
