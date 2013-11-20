@@ -11,7 +11,15 @@ angular.module('cookingWithAngularApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'modules/dashboard/dashboard.html',
-        controller: 'DashboardController'
+        controller: 'DashboardController',
+        resolve: {
+            recipes: function(RecipeListService, $q){
+                var deferred = $q.defer();
+                var callback = deferred.resolve;
+                RecipeListService.getDashboardRecipes(callback);
+                return deferred.promise;
+            }
+        }
       })
       .when('/recipe', {
         templateUrl: 'modules/recipe/recipe.html',

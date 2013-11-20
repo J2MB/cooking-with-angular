@@ -1,11 +1,9 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('DashboardController', function ($scope, $location, RecipeListService) {
+  .controller('DashboardController', function ($scope, $location, recipes) {
       
-    RecipeListService.promise.then(function(){
-        $scope.dashboardRecipes = RecipeListService.getRecipes();
-    });
+     $scope.dashboardRecipes = recipes;
      
      $scope.go = function(path){
         $location.path(path);
