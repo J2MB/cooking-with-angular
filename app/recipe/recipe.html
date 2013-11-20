@@ -1,0 +1,31 @@
+<div>
+    <div class="row-fluid imageHeader">
+        <img src="{{recipe.imageUrl}}"/>
+    </div>    
+    <button class="btn btn-primary add-item-button" 
+            ng-click="add()" 
+            ng-show="newMode" 
+            ng-disabled="disabled()">Add Recipe</button>
+    <button class="btn btn-primary add-item-button" 
+            ng-click="save()" 
+            ng-show="editMode" 
+            ng-disabled="disabled()">Save Recipe</button>
+    <div class="trans-bar"><h1>{{recipe.name}}</h1></div>
+    <div class="clear remove-gutter"></div>
+    <div class="container">
+        <div class="row-fluid card-container">
+            <div class="span5 card">
+                <cwa-ingredients ingredients="recipe.ingredients"></cwa-ingredients>
+            </div>
+            <div class="span7">
+                <div class="row-fluid card">
+                    <cwa-steps steps="recipe.steps" />
+                </div>
+                <div class="row-fluid card">
+                    <cwa-notes notes="recipe.notes" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

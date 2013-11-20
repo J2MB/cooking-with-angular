@@ -1,0 +1,13 @@
+<div>
+    <h3 class="center">Steps</h3>
+    <ol>
+        <li ng-repeat="step in steps">
+            <span ng-bind="step.description" />
+            <deleteable index="$index" list="steps" />
+        </li>
+    </ol>
+    <form name="newStepForm">
+    <input type="text" ng-model="newStep.description" required />
+    <button class="btn btn-primary" ng-click="addStep()" ng-disabled="newStepForm.$invalid">(+) add step</button>
+    </form>
+</div>

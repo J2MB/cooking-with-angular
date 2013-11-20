@@ -1,0 +1,13 @@
+<div>
+    <h3 class="center">Notes</h3>
+    <ul>
+        <li ng-repeat="note in notes">
+            <span ng-bind="note.description" />
+            <deleteable index="$index" list="notes" />
+        </li>
+    </ul>
+    <form name="newNoteForm">
+    <input type="text" ng-model="newNote.description" required />
+    <button class="btn btn-primary" ng-click="addNote()" ng-disabled="newNoteForm.$invalid">(+) add note</button>
+    </form>
+</div>
