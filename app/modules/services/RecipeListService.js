@@ -7,7 +7,7 @@ angular.module('cookingWithAngularApp')
       var request = Recipes.query();
       this.promise = request.$promise;
       
-      this.addRecipe = function(recipe) {
+      this.addRecipe = function(recipe) { //this is kinda dumb now. but it works!
           this.promise.then(function(data){
             data.push(recipe);
             return data;
@@ -23,5 +23,17 @@ angular.module('cookingWithAngularApp')
             var recipe = recipes[id];
             callback(recipe);
          });
+      };
+      
+      this.blankRecipe = function(){
+        return {
+            name: "Fried Bacon",
+            imageUrl: "http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg",
+            servings: "",
+            rating: "",
+            ingredients: [],
+            steps: [],
+            notes: []
+        };
       };
   });

@@ -23,7 +23,13 @@ angular.module('cookingWithAngularApp', [
       })
       .when('/recipe', {
         templateUrl: 'modules/recipe/recipe.html',
-        controller: 'RecipeController'
+        controller: 'RecipeController',
+        resolve: {
+            recipe: function(RecipeListService, $q){
+                //returns a promise that resolves to a blank recipe.
+                return $q.when(RecipeListService.blankRecipe());
+            }
+        }
       })
       .when('/recipe/:id', {
         templateUrl: 'modules/recipe/recipe.html',
