@@ -7,7 +7,9 @@
         </li>
     </ol>
     <form name="newStepForm">
-    <input type="text" ng-model="newStep.description" required />
-    <button class="btn btn-primary" ng-click="addStep()" ng-disabled="newStepForm.$invalid">(+) add step</button>
+        <input type="text" ng-model="newStep.description" required />
+        <button class="btn btn-primary" ng-click="addStep()" ng-disabled="newStepForm.$invalid">
+            (+) add step
+        </button>
     </form>
 </div>

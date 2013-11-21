@@ -7,7 +7,9 @@
         </li>
     </ul>
     <form name="newNoteForm">
-    <input type="text" ng-model="newNote.description" required />
-    <button class="btn btn-primary" ng-click="addNote()" ng-disabled="newNoteForm.$invalid">(+) add note</button>
+        <input type="text" ng-model="newNote.description" required />
+        <button class="btn btn-primary" ng-click="addNote()" ng-disabled="newNoteForm.$invalid">
+            (+) add note
+        </button>
     </form>
 </div>
