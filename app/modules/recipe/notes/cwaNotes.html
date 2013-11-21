@@ -1,7 +1,7 @@
 <div>
     <h3 class="center">Notes</h3>
     <ul>
-        <li ng-repeat="note in notes">
+        <li ng-repeat="note in notes track by $index">
             <span ng-bind="note.description"></span>
             <deleteable index="$index" list="notes"></deleteable>
         </li>

@@ -1,36 +1,21 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .controller('RecipeController', function ($scope, $location, RecipeListService, $routeParams) {
-      $scope.newMode = $routeParams.id === undefined;
-      $scope.editMode = $routeParams.id && $location.path().indexOf('/edit') != -1;
+  .controller('RecipeController', function ($scope, $location, RecipeListService, recipe, newMode, editMode) {
+      $scope.newMode = newMode;
+      $scope.editMode = editMode;
+      $scope.recipe = recipe;
       
-      var initRecipe = function() {
-          if (!$scope.newMode) {
-              return RecipeListService.dashboardRecipes[$routeParams.id];
-          }
-          
-          return {
-                name: "Fried Bacon",
-                imageUrl: "http://foodriot.com/wp-content/uploads/2013/06/bacon.jpg",
-                servings: "",
-                rating: "",
-                ingredients: [],
-                steps: [],
-                notes: []
-            };
-      }
+      $scope.addRecipe = function(recipe) {
+          RecipeListService.addRecipe(recipe);
+          $location.path("/");
+      };
       
-      $scope.recipe = initRecipe();
-      
-      $scope.add = function() {
-          RecipeListService.add($scope.recipe);
+      $scope.saveRecipe = function(recipe){
           $location.path("/");
       };
       
       $scope.disabled = function() {
-          return $scope.recipe.ingredients.length < 2 || $scope.recipe.steps.length == 0;
-      }
-      
-      
+          return recipe.ingredients.length < 2 || recipe.steps.length == 0;
+      };
   });

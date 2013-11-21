@@ -1,7 +1,7 @@
 <div>
     <h3 class="center">Ingredients</h3>
     <ul>
-        <li class="naked-list-item" ng-repeat="ingredient in ingredients" >
+        <li class="naked-list-item" ng-repeat="ingredient in ingredients track by $index" >
             <span ng-bind="ingredient.quantity"></span>
             <span ng-show="ingredient.unit">{{ingredient.unit}} of </span>
             <span ng-show="ingredient.description" >{{ingredient.description}},</span>
