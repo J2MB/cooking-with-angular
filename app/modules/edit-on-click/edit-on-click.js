@@ -51,7 +51,7 @@ compile: function editOnClickCompile(tElement, tAttrs, transclude)
 
 //End directive
 
-}
+};
 });
 
 }();
