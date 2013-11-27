@@ -1,21 +1,20 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .directive('cwaNotes', function () {
+.directive('cwaNotes', function() {
     return {
-      templateUrl: 'modules/recipe/notes/cwaNotes.html',
-      restrict: 'E',
-      scope: {
-        notes : "="
+        templateUrl : 'modules/recipe/notes/cwaNotes.html',
+        restrict : 'E',
+        scope : {
+            notes : "="
         },
-    
-        controller: function($scope){
+        controller : function($scope) {
             $scope.newNote = {};
-            
-            $scope.addNote = function(){
+
+            $scope.addNote = function() {
                 $scope.notes.push($scope.newNote);
                 $scope.newNote = {};
-            }
+            };
         }
-    }
-  });
+    };
+});

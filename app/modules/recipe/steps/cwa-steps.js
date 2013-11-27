@@ -1,21 +1,20 @@
 'use strict';
 
 angular.module('cookingWithAngularApp')
-  .directive('cwaSteps', function () {
+.directive('cwaSteps', function() {
     return {
-      templateUrl: 'modules/recipe/steps/cwaSteps.html',
-      restrict: 'E',
-      scope: {
-        steps : "="
+        templateUrl : 'modules/recipe/steps/cwaSteps.html',
+        restrict : 'E',
+        scope : {
+            steps : "="
         },
-    
-        controller: function($scope){
+        controller : function($scope) {
             $scope.newStep = {};
-            
-            $scope.addStep = function(){
+
+            $scope.addStep = function() {
                 $scope.steps.push($scope.newStep);
                 $scope.newStep = {};
-            }
+            };
         }
-    }
-  });
+    };
+});
