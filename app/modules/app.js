@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('cookingWithAngularApp', [
+  'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
