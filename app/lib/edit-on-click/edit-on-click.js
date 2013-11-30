@@ -4,7 +4,7 @@ angular.module("editOnClick", [])
     return {
         restrict : "A",
         transclude: true,
-        templateUrl: 'modules/edit-on-click/template.html',
+        templateUrl: 'lib/edit-on-click/template.html',
         scope : {
             text : '=editOnClick'
         },
