@@ -7,7 +7,8 @@ angular.module('cookingWithAngularApp', [
   'ngRoute',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'editOnClick'
 ])
 .config(function($routeProvider) {
     
