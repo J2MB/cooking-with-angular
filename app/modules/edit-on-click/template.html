@@ -1,0 +1,14 @@
+<form name="editForm"
+  editblock>
+    <input type='text'
+      editinput
+      ng-show="editMode"
+      ng-model='model.text'
+      ng-blur="endEdit(model.text)">
+    <span
+      editcontent
+      ng-transclude
+      ng-hide="editMode"
+      ng-click="startEdit()">
+    </span>
+</form>
