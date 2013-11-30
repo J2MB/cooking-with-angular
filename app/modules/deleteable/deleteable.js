@@ -19,10 +19,10 @@ angular.module('cookingWithAngularApp')
             $scope.remove = remove;
 
             $scope.moveUp = function(index) {
+                if (index <= 0){ return; }
                 var temp = list[index];
                 remove(index);
                 list.splice(index - 1, 0, temp);
-                //$animate.move(element, undefined, undefined);
             };
 
             $scope.moveDown = function(index) {
