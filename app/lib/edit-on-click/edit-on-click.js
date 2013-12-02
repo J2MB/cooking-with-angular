@@ -3,7 +3,7 @@ angular.module("editOnClick", [])
     return {
         restrict : "A",
         transclude: true,
-        templateUrl: 'lib/edit-on-click/template.html',
+        template: "<input type='text' ng-show='editMode' ng-model='model.text' ng-blur='endEdit()'><span ng-hide='editMode' ng-click='startEdit()'>{{text}}</span>",
         scope : {
             text : '=editOnClick'
         },
@@ -12,23 +12,23 @@ angular.module("editOnClick", [])
             $scope.model = { text: $scope.text };
             $scope.editMode = false;
             
-            $scope.startEdit = function(){
+            $scope.startEdit = function editOnClickStartEdit(){
                 $scope.editMode = true;
-                
-                 //not proud of using $timeout. need ctrl.focus() to execute after dom changes.
-                $timeout(ctrl.focus, 100);
+                $scope.model.text = $scope.text;
+                 //need ctrl.focus() to execute after dom changes.
+                $timeout(ctrl.focus, 1);
             };
-            $scope.endEdit = function(text){
+            $scope.endEdit = function editOnClickEndEdit(){
+                if(text.length > 0){$scope.text = $scope.model.text;}
                 $scope.editMode = false;
-                $scope.text = text;
             };
         },
         link: function editOnClickPreLink(scope, element, attrs, ctrl) {
-            ctrl.focus = function(){
-                var input = element.children()[0].children[0]; //until I know how to $('[editinput]')
-                input = angular.element(input)[0];
-                input.focus();
-            };
+            var input = element.find("input");
+            input.on('keypress',function(event){
+                if(event.keyCode == 13 && this.value.length > 0){this.blur();}
+            });
+            ctrl.focus = function(){input[0].focus();};
         }
     };
 });
