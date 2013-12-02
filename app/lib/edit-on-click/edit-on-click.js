@@ -19,7 +19,7 @@ angular.module("editOnClick", [])
                 $timeout(ctrl.focus, 1);
             };
             $scope.endEdit = function editOnClickEndEdit(){
-                if(text.length > 0){$scope.text = $scope.model.text;}
+                if($scope.model.text.length > 0){$scope.text = $scope.model.text;}
                 $scope.editMode = false;
             };
         },
