@@ -1,6 +1,5 @@
 angular.module("editOnClick", [])
 .directive('editOnClick', function editOnClickDirective() {
-    var make = angular.element;
     return {
         restrict : "A",
         transclude: true,
@@ -8,23 +7,26 @@ angular.module("editOnClick", [])
         scope : {
             text : '=editOnClick'
         },
-        controller : function editOnClickController($scope) {
+        controller : function editOnClickController($scope, $timeout) {
             var ctrl = this;
             $scope.model = { text: $scope.text };
             $scope.editMode = false;
             
             $scope.startEdit = function(){
                 $scope.editMode = true;
-                ctrl.focus();
+                
+                 //not proud of using $timeout. need ctrl.focus() to execute after dom changes.
+                $timeout(ctrl.focus, 100);
             };
             $scope.endEdit = function(text){
                 $scope.editMode = false;
                 $scope.text = text;
             };
         },
-        link: function preLink(scope, element, attrs, ctrl) {
+        link: function editOnClickPreLink(scope, element, attrs, ctrl) {
             ctrl.focus = function(){
                 var input = element.children()[0].children[0]; //until I know how to $('[editinput]')
+                input = angular.element(input)[0];
                 input.focus();
             };
         }
