@@ -1,5 +1,5 @@
 angular.module("editOnClick", [])
-.directive('editOnClick', function editOnClickDirective($timeout) {
+.directive('editOnClick', function editOnClickDirective($animate, $timeout) {
     return {
         restrict : "A",
         replace: false,
@@ -15,7 +15,7 @@ angular.module("editOnClick", [])
             $scope.startEdit = function editOnClickStartEdit(text){
                 $scope.editMode = true;
                 $scope.model.text = text;
-                $timeout(ctrl.focus, 100);//need ctrl.focus() to execute after dom changes.
+                $timeout(ctrl.focus, 0);//need ctrl.focus() to execute after dom changes.
             };
             $scope.endEdit = function editOnClickEndEdit(text){
                 $scope.editMode = false;
@@ -23,6 +23,7 @@ angular.module("editOnClick", [])
             };
         },
         link: function editOnClickPreLink(scope, element, attrs, ctrl) {
+            $animate.enabled(false, element);
             var getInput = function(){
                 return element.find("input")[0];
             };

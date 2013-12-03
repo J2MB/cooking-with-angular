@@ -1,15 +1,12 @@
 <span ng-switch='editMode'>
-    <span ng-switch-when='true'>
-        <input type='text'
-            ng-show='editMode' 
-            ng-model='model.text'
-            ng-blur='endEdit(model.text)'
-            ng-keypress='handleEnter($event)'>
-    </span>
-    <span ng-switch-when='false'>
-        <span ng-hide='editMode'
-            ng-click='startEdit(text)'
-            ng-bind='text'>
-        </span>
+    <input type='text'
+        ng-switch-when='true'
+        ng-model='model.text'
+        ng-blur='endEdit(model.text)'
+        ng-keypress='handleEnter($event)'>
+    <span
+        ng-switch-when='false'
+        ng-click='startEdit(text)'
+        ng-bind='text'>
     </span>
 </span>
