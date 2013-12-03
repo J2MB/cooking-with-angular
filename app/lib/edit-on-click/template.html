@@ -1,9 +1,22 @@
-<input type='text'
-    ng-show='editMode' 
-    ng-model='model.text'
-    ng-blur='endEdit(model.text)'
-    ng-keypress='handleEnter($event)'>
-<span ng-hide='editMode' 
-    ng-click='startEdit(text)'
-    ng-bind='text'>
+<style>
+    [edit-on-click] .editMode > [eoc-input] {
+        display:inline;
+    }
+    [edit-on-click] .editMode > [eoc-content], 
+    [edit-on-click] [eoc-input] {
+        display:none;
+    }
+</style>
+
+<span ng-class="{'editMode':editMode}">
+    <input type='text'
+        eoc-input
+        ng-model='model.text'
+        ng-blur='endEdit(model.text)'
+        ng-keypress='handleEnter($event)'>
+    <span
+        eoc-content
+        ng-click='startEdit(text)'
+        ng-bind='text'>
+    </span>
 </span>
