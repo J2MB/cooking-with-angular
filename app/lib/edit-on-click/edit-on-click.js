@@ -1,5 +1,5 @@
 angular.module("editOnClick", [])
-.directive('editOnClick', function editOnClickDirective() {
+.directive('editOnClick', function editOnClickDirective($timeout) {
     return {
         restrict : "A",
         replace: false,
@@ -7,7 +7,7 @@ angular.module("editOnClick", [])
         scope : {
             text : '=editOnClick'
         },
-        controller : function editOnClickController($scope, $timeout) {
+        controller : function editOnClickController($scope) {
             var ctrl = this;
             $scope.model = { text: $scope.text };
             $scope.editMode = false;
@@ -23,11 +23,14 @@ angular.module("editOnClick", [])
             };
         },
         link: function editOnClickPreLink(scope, element, attrs, ctrl) {
-            var input = element.find("input");
-            input.on('keypress',function(event){
-                if(event.keyCode == 13 && this.value.length > 0){this.blur();}
-            });
-            ctrl.focus = function(){input[0].focus();};
+            var input = element.find("input")[0];
+            ctrl.focus = function(){input.focus();};
+            
+            scope.handleEnter = function(event){
+                if(event.keyCode == 13 && input.value.length > 0){
+                    $timeout(function(){ input.blur(); }, 0);
+                }
+            };
         }
     };
 });

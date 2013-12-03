@@ -1,8 +1,9 @@
 <input type='text'
     ng-show='editMode' 
     ng-model='model.text'
-    ng-blur='endEdit(model.text)'>
+    ng-blur='endEdit(model.text)'
+    ng-keypress='handleEnter($event)'>
 <span ng-hide='editMode' 
     ng-click='startEdit(text)'
-    ng-bind="text">
+    ng-bind='text'>
 </span>
