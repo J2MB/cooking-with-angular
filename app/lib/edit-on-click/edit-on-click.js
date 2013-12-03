@@ -23,10 +23,13 @@ angular.module("editOnClick", [])
             };
         },
         link: function editOnClickPreLink(scope, element, attrs, ctrl) {
-            var input = element.find("input")[0];
-            ctrl.focus = function(){input.focus();};
+            var getInput = function(){
+                return element.find("input")[0];
+            };
+            ctrl.focus = function(){getInput().focus();};
             
             scope.handleEnter = function(event){
+                input = getInput();
                 if(event.keyCode == 13 && input.value.length > 0){
                     $timeout(function(){ input.blur(); }, 0);
                 }
