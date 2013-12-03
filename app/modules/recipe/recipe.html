@@ -10,7 +10,7 @@
             ng-click="saveRecipe(recipe)" 
             ng-show="editMode" 
             ng-disabled="disabled()">Save Recipe</button>
-    <div class="trans-bar"><h1 edit-on-click ng-bind="recipe.name"></h1></div>
+    <div class="trans-bar"><h1 edit-on-click="recipe.name">{{recipe.name}}</h1></div>
     <div class="clear remove-gutter"></div>
     <div class="container">
         <div class="row-fluid card-container">

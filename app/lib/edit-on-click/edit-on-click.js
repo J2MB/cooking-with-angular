@@ -5,7 +5,7 @@ angular.module("editOnClick", [])
         replace: false,
         templateUrl: 'lib/edit-on-click/template.html',
         scope : {
-            text : '=ngBind'
+            text : '=editOnClick'
         },
         controller : function editOnClickController($scope) {
             var ctrl = this;
@@ -23,19 +23,10 @@ angular.module("editOnClick", [])
             };
         },
         link: function editOnClickPreLink(scope, element, attrs, ctrl) {
-            var template = element.children()[0],
-                getInput = function(){
-                    return element.find("input")[0];
-                };
-
             $animate.enabled(false, element);
-            
-            //overrides ngBind functionality
-            scope.$watch(attrs.ngBind, function(){
-                element.text('');
-                element.append(template);
-            });
-
+            var getInput = function(){
+                return element.find("input")[0];
+            };
             ctrl.focusInput = function(){getInput().focus();};
             
             scope.handleEnter = function(event){
