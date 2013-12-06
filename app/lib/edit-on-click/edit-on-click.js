@@ -15,7 +15,7 @@ angular.module("editOnClick", [])
             $scope.startEdit = function editOnClickStartEdit(text){
                 $scope.editMode = true;
                 $scope.model.text = text;
-                $timeout(ctrl.focus, 0);//need ctrl.focus() to execute after dom changes.
+                $timeout(ctrl.focusInput, 0);//need ctrl.focus() to execute after dom changes.
             };
             $scope.endEdit = function editOnClickEndEdit(text){
                 $scope.editMode = false;
@@ -27,7 +27,7 @@ angular.module("editOnClick", [])
             var getInput = function(){
                 return element.find("input")[0];
             };
-            ctrl.focus = function(){getInput().focus();};
+            ctrl.focusInput = function(){getInput().focus();};
             
             scope.handleEnter = function(event){
                 input = getInput();
