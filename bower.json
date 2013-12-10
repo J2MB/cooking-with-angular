@@ -1,0 +1,12 @@
+{
+  "name": "cooking-with-angular",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.4",
+    "angular-animate": "~1.2.4",
+    "angular-resource": "~1.2.4",
+    "angular-route": "~1.2.4",
+    "angular-ui-bootstrap-bower": "~0.7.0",
+    "animate.css": "3.0.0"
+  }
+}

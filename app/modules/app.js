@@ -2,10 +2,7 @@
 
 angular.module('cookingWithAngularApp', [
   'ngAnimate',
-  'ngCookies',
   'ngResource',
-  'ngRoute',
-  'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
   'editOnClick'
